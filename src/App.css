@@ -1,38 +1,251 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');         /* style={{fontFamily: 'Sirin Stencil', cursive}} */
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');           /* style={{fontFamily: 'Trade Winds', cursive}} */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');               /* style={{fontFamily: 'Oxanium', cursive}} */
+
+body {
+	background-color: rgb(50, 50, 50);
+  color: rgb(125, 125, 125);
+  font-family: 'Geneva', Tahoma, Verdana, sans-serif;
+  font-family: 'Sirin Stencil', cursive;
+  /* font-family: 'Marker Felt', fantasy; */
+	font-size: 17px;
+	font-weight: normal;
+	line-height: 0.7em;
+	margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.status-bar-container {
+  display: grid;
+  grid-template-areas:
+    'SB-left SB-left SB-middle SB-middle SB-right SB-right'
+    'SB-left SB-left SB-middle SB-middle SB-right SB-right';
+  grid-gap: 5px;
+  
+  width: 80%;
+  margin: auto;
+  margin-top: 0px;
+  /* border: solid 2px rgb(125, 125, 125); */
+  padding: 1px;
+  /* border-radius: 15px; */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.status-bar-left { 
+  grid-area: SB-left; 
+  /* border: 2px solid rgb(28, 28, 28); */
+  padding-top: 0px;
+  /* box-sizing: border-box; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.status-bar-middle { 
+  grid-area: SB-middle;   
+  /* border: 2px solid rgb(28, 28, 28); */
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-size: 23px;
+  vertical-align: middle;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.status-bar-right { 
+  grid-area: SB-right;  
+  /* border: 2px solid rgb(28, 28, 28); */
+  padding-top: 0px;
+}
+
+#buttonStyle-paused {
+  animation: pausedgame 0.5s infinite alternate;
+}
+@keyframes pausedgame {
+  from {background-color: rgb(125, 125, 125);}
+  to {background-color: rgb(50, 50, 50);}
+}
+
+.player-platform-container {
+  display: grid;
+  grid-template-columns: 
+  auto auto auto auto
+  auto auto auto auto
+  auto auto auto auto
+  auto auto auto auto
+  auto auto auto;           /* 19 columnas */
+  grid-gap: 1px;
+  
+  width: 80%;
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  /* border: dotted 3px #333; */
+  padding: 5px;
+  /* border-radius: 15px; */
+  text-align: center;
+}
+
+.player { 
+  /* background-color: rgb(246, 246, 246); */
+  /* border: 1px solid rgb(28, 28, 28); */
+  /* font-size: 10px; */
+  min-width: 50px;
+}
+
+.enemy-grid-container {
+  display: grid;
+  grid-template-columns: 
+  auto auto auto auto
+  auto auto auto auto
+  auto auto auto auto
+  auto auto auto auto
+  auto auto auto;           /* 19 columnas */
+  grid-gap: 1px;
+  
+  width: 80%;
+  margin: auto;
+  margin-top: 0px;
+  border-top: dotted 2px ;
+  border-bottom: dotted 2px ;
+  /* border: dotted 3px #333; */
+  padding: 5px;
+  /* border-radius: 15px; */
+  text-align: center;
+}
+
+.welcome-screen-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 15px;
+
+  width: 80%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* border: dotted 3px #333; */
+  padding: 5px;
+  /* border-radius: 15px; */
+  text-align: center;
+}
+
+.welcome-screen-container > div {
+  vertical-align: middle;
+  /* border: 2px solid rgb(28, 28, 28); */
+  padding: 10px;
+  font-size: 25px;
+}
+
+.welcome-screen-banner { 
+  grid-column: 1 / span 3;
+  display: inline;
+}
+
+.welcome-screen-banner > p { 
+  font-size: 17px;
+}
+
+.language-banner { 
+  grid-column: 2 / span 2;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 5px;
+
+  width: 50%;
+  margin: auto;
+  /* border: dotted 1px #333; */
+  padding: 1px;
+  text-align: center;
+}
+
+.about-container > div {
+  vertical-align: middle;
+  border: 1px solid rgb(28, 28, 28);
+  padding: 3px;
+}
+
+.game-name-style {
+  font-family: 'Trade Winds', cursive;
+}
+
+.button {
+	background-color: rgb(125, 125, 125);
+  border: 2px solid rgb(28, 28, 28);
   color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-family: 'Oxanium', cursive;
+  font-size: 15px;
+  transition-duration: 0.5s;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.button:hover {
+	background-color: rgb(240, 240, 240);
+  color: rgb(50, 50, 50);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.enemy { 
+  /* background-color: rgba(57, 226, 170, 0.329); */
+  /* border: 1px solid rgb(28, 28, 28); */
+  font-size: 10px; 
+  min-width: 50px;
+}
+
+#enemydiv-paused {
+  margin: auto;
+  width: 35px;
+  height: 37px;
+  /* border: 1px solid rgb(28, 28, 28); */
+}
+
+#enemydiv {
+  margin-inline-end: auto;
+  width: 35px;
+  height: 37px;
+  /* border: 1px solid rgb(28, 28, 28); */
+  position: relative;
+  animation: enemymove 2s infinite alternate;
+  animation-timing-function: ease-in-out;
+}
+
+/* Medium devices (laptops/desktops, 1270px and down) */
+@media only screen and (max-width: 1280px) {
+  @keyframes enemymove {
+    from {left: 0px;}
+    to {left: 15px;}
   }
 }
+
+/* Large devices (large laptops and desktops, 1280px and up) */
+@media only screen and (min-width: 1280px) {
+  @keyframes enemymove {
+    from {left: 0px;}
+    to {left: 20px;}
+  }
+}
+
+/* Large devices (large laptops and desktops, 1500px and up) */
+@media only screen and (min-width: 1500px) {
+  @keyframes enemymove {
+    from {left: 0px;}
+    to {left: 30px;}
+  }
+}
+
+/* Extra large devices (extra-large laptops and desktops, 1700px and up) */
+@media only screen and (min-width: 1700px) {
+  @keyframes enemymove {
+    from {left: 0px;}
+    to {left: 39px;}
+  }
+}
+
+/* .logo {
+  max-height: '80px';
+  width: 'auto',;
+  padding: '5px';
+} */
