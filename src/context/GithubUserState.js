@@ -4,8 +4,13 @@ import GithubUserReducer from './GithubUserReducer'
 
 // Initial state
 const initialState = {
-  topFive = ["GrahamCampbell", "fabpot", "weierophinney", "rkh", "josh"],
-  userInfo: {}
+  topFive: ['GrahamCampbell', 'fabpot', 'weierophinney', 'rkh', 'josh'],
+  userInfo: {
+    activeUser: '',
+    avatarUrl: '',
+    name: '',
+    location: '',
+  }
 }
 
 // Create Context
@@ -25,12 +30,20 @@ export const GlobalProvider = ({ children }) => {
     })
   }
 
+  function clickedUser(username) {
+    dispatch({
+      type: 'SET_ACTIVE_USER',
+      payload: username
+    })
+  }
+
   return (
     <GlobalContext.Provider 
       value={{
         topFive: state.topFive,
         userInfo: state.userInfo,
         getUser,
+        clickedUser,
       }}
     >
       { children }

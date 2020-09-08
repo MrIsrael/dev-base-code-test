@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');         /* style={{fontFamily: 'Sirin Stencil', cursive}} */
-@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');           /* style={{fontFamily: 'Trade Winds', cursive}} */
-@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');               /* style={{fontFamily: 'Oxanium', cursive}} */
 
 body {
-	background-color: rgb(50, 50, 50);
-  color: rgb(125, 125, 125);
+	background-color: #ccc;
+  color: #000;
   font-family: 'Geneva', Tahoma, Verdana, sans-serif;
-  font-family: 'Sirin Stencil', cursive;
+  /* font-family: 'Sirin Stencil', cursive; */
   /* font-family: 'Marker Felt', fantasy; */
 	font-size: 17px;
 	font-weight: normal;
@@ -18,7 +16,7 @@ body {
   display: none;
 }
 
-.status-bar-container {
+.containers {
   display: grid;
   grid-template-areas:
     'SB-left SB-left SB-middle SB-middle SB-right SB-right'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-// import Home from './components/pages/Home'
-// import Person from './components/pages/Person'
+import Home from './components/pages/home'
+import Person from './components/pages/person'
 import Navbar from './components/layout/navbar'
 
 import { GlobalProvider } from './context/GithubUserState'
@@ -10,7 +10,7 @@ import './App.css'
 
 const App = () => {
   return (
-    <GlobalProvider>    
+    <GlobalProvider>
       <Router>
         <div className="App">
           <Navbar />
