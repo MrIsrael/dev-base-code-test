@@ -6,10 +6,11 @@ import GithubUserReducer from './GithubUserReducer'
 const initialState = {
   topFive: ['GrahamCampbell', 'fabpot', 'weierophinney', 'rkh', 'josh'],
   userInfo: {
+    userLoaded: false,
     activeUser: '',
     avatarUrl: '',
     name: '',
-    location: '',
+    location: ''
   }
 }
 

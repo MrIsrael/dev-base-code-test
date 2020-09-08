@@ -3,12 +3,13 @@ export default (state, action) => {
     case 'GET_USER':
       return {
         ...state,
-        userInfo: action.payload
+        userInfo: { ...state.userInfo, ...{ avatarUrl: action.payload.avatar_url, name: action.payload.name,
+                                            location: action.payload.location, userLoaded: true } }
       }
     case 'SET_ACTIVE_USER':
       return {
         ...state,
-        userInfo: { ...state.userInfo, ...{ activeUser: action.payload } }
+        userInfo: { ...state.userInfo, ...{ activeUser: action.payload, userLoaded: false } }
       }
     default:
       return state

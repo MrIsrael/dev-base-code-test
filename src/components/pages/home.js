@@ -10,7 +10,9 @@ const Home = () => {
     <Fragment>
       <h2>Top 5 GitHub users</h2>
       <p>Tap the username to see more information</p>
-      {topFive.map(user => <Link to='/user'><button className='button' key={topFive.indexOf(user)} onClick={() => clickedUser(user)}>{user}</button></Link>)}
+      {topFive.map(user => <Link to='/user' key={topFive.indexOf(user)}>
+                             <button className='button' key={topFive.indexOf(user)} onClick={() => clickedUser(user)}>{user}</button>
+                           </Link>)}
     </Fragment>
   )
 }
