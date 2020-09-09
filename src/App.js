@@ -12,15 +12,18 @@ const App = () => {
   return (
     <GlobalProvider>
       <Router>
-        <div className="App">
+      
+        <div className='navbar'>
           <Navbar />
-          <div className="container">
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/user' component={Person} />
-            </Switch>
-          </div>
         </div>
+
+        <div className='container'>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/user' component={Person} />
+          </Switch>
+        </div>
+
       </Router>
     </GlobalProvider>
   )

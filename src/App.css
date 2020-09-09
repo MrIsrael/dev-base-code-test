@@ -1,249 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');         /* style={{fontFamily: 'Sirin Stencil', cursive}} */
-
 body {
-	background-color: #ccc;
+	background-color: #fff;
   color: #000;
-  font-family: 'Geneva', Tahoma, Verdana, sans-serif;
-  /* font-family: 'Sirin Stencil', cursive; */
-  /* font-family: 'Marker Felt', fantasy; */
-	font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
-	line-height: 0.7em;
-	margin: 0;
+  line-height: 1em;
+  margin: auto;
 }
 
 .hidden {
   display: none;
 }
 
-.containers {
-  display: grid;
-  grid-template-areas:
-    'SB-left SB-left SB-middle SB-middle SB-right SB-right'
-    'SB-left SB-left SB-middle SB-middle SB-right SB-right';
-  grid-gap: 5px;
-  
-  width: 80%;
-  margin: auto;
-  margin-top: 0px;
-  /* border: solid 2px rgb(125, 125, 125); */
-  padding: 1px;
-  /* border-radius: 15px; */
-  text-align: center;
-}
-
-.status-bar-left { 
-  grid-area: SB-left; 
-  /* border: 2px solid rgb(28, 28, 28); */
-  padding-top: 0px;
-  /* box-sizing: border-box; */
-}
-
-.status-bar-middle { 
-  grid-area: SB-middle;   
-  /* border: 2px solid rgb(28, 28, 28); */
-  padding-top: 10px;
-  padding-bottom: 5px;
-  font-size: 23px;
-  vertical-align: middle;
-}
-
-.status-bar-right { 
-  grid-area: SB-right;  
-  /* border: 2px solid rgb(28, 28, 28); */
-  padding-top: 0px;
-}
-
-#buttonStyle-paused {
-  animation: pausedgame 0.5s infinite alternate;
-}
-@keyframes pausedgame {
-  from {background-color: rgb(125, 125, 125);}
-  to {background-color: rgb(50, 50, 50);}
-}
-
-.player-platform-container {
-  display: grid;
-  grid-template-columns: 
-  auto auto auto auto
-  auto auto auto auto
-  auto auto auto auto
-  auto auto auto auto
-  auto auto auto;           /* 19 columnas */
-  grid-gap: 1px;
-  
-  width: 80%;
-  margin: auto;
-  margin-top: 0px;
-  margin-bottom: 25px;
-  /* border: dotted 3px #333; */
-  padding: 5px;
-  /* border-radius: 15px; */
-  text-align: center;
-}
-
-.player { 
-  /* background-color: rgb(246, 246, 246); */
-  /* border: 1px solid rgb(28, 28, 28); */
-  /* font-size: 10px; */
-  min-width: 50px;
-}
-
-.enemy-grid-container {
-  display: grid;
-  grid-template-columns: 
-  auto auto auto auto
-  auto auto auto auto
-  auto auto auto auto
-  auto auto auto auto
-  auto auto auto;           /* 19 columnas */
-  grid-gap: 1px;
-  
-  width: 80%;
-  margin: auto;
-  margin-top: 0px;
-  border-top: dotted 2px ;
-  border-bottom: dotted 2px ;
-  /* border: dotted 3px #333; */
-  padding: 5px;
-  /* border-radius: 15px; */
-  text-align: center;
-}
-
-.welcome-screen-container {
+.navbar {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 15px;
-
-  width: 80%;
+  grid-gap: 1px;
+  width: 100%;
   margin: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  /* border: dotted 3px #333; */
-  padding: 5px;
-  /* border-radius: 15px; */
+  margin-bottom: 30px;
   text-align: center;
-}
-
-.welcome-screen-container > div {
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  overflow: auto;
   vertical-align: middle;
-  /* border: 2px solid rgb(28, 28, 28); */
-  padding: 10px;
-  font-size: 25px;
 }
 
-.welcome-screen-banner { 
-  grid-column: 1 / span 3;
+.navbar-left {
+  text-align: left;
+  padding: 15px;
+  margin-left: 20px;
+}
+
+.icon-style { 
+  color: #fff;
+}
+
+.third-column { 
+  visibility: hidden;
+  color: #000;
+}
+
+.inline { 
   display: inline;
 }
 
-.welcome-screen-banner > p { 
-  font-size: 17px;
-}
-
-.language-banner { 
-  grid-column: 2 / span 2;
-}
-
-.about-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 5px;
-
-  width: 50%;
-  margin: auto;
-  /* border: dotted 1px #333; */
-  padding: 1px;
-  text-align: center;
-}
-
-.about-container > div {
-  vertical-align: middle;
-  border: 1px solid rgb(28, 28, 28);
-  padding: 3px;
-}
-
-.game-name-style {
-  font-family: 'Trade Winds', cursive;
+.extra-margin { 
+  margin-bottom: 25px;
 }
 
 .button {
-	background-color: rgb(125, 125, 125);
-  border: 2px solid rgb(28, 28, 28);
+	background-color: rgb(80, 135, 247);
+  border: 0px;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
   text-align: center;
   text-decoration: none;
-  /* display: inline-block; */
-  font-family: 'Oxanium', cursive;
-  font-size: 15px;
   transition-duration: 0.5s;
   cursor: pointer;
 }
 
 .button:hover {
-	background-color: rgb(240, 240, 240);
-  color: rgb(50, 50, 50);
+	background-color: rgb(55, 98, 190);
 }
 
-.enemy { 
-  /* background-color: rgba(57, 226, 170, 0.329); */
-  /* border: 1px solid rgb(28, 28, 28); */
-  font-size: 10px; 
-  min-width: 50px;
+.black-text { 
+  color: #000;
+  font-size: 1.1em;
 }
 
-#enemydiv-paused {
+.container {
+  width: 95%;
   margin: auto;
-  width: 35px;
-  height: 37px;
-  /* border: 1px solid rgb(28, 28, 28); */
+  text-align: left;
 }
 
-#enemydiv {
-  margin-inline-end: auto;
-  width: 35px;
-  height: 37px;
-  /* border: 1px solid rgb(28, 28, 28); */
+.relative {
   position: relative;
-  animation: enemymove 2s infinite alternate;
-  animation-timing-function: ease-in-out;
+  left: 0px;
+  margin-bottom: 1.5em;
 }
 
-/* Medium devices (laptops/desktops, 1270px and down) */
-@media only screen and (max-width: 1280px) {
-  @keyframes enemymove {
-    from {left: 0px;}
-    to {left: 15px;}
-  }
+.absolute {
+  position: absolute;
+  top: 0.3em;
+  left: 5em;
 }
 
-/* Large devices (large laptops and desktops, 1280px and up) */
-@media only screen and (min-width: 1280px) {
-  @keyframes enemymove {
-    from {left: 0px;}
-    to {left: 20px;}
-  }
+.avatar {
+  vertical-align: middle;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
 }
 
-/* Large devices (large laptops and desktops, 1500px and up) */
-@media only screen and (min-width: 1500px) {
-  @keyframes enemymove {
-    from {left: 0px;}
-    to {left: 30px;}
-  }
+.soft-color { 
+  color: rgb(177, 177, 177);
+  line-height: 0.1em;
 }
-
-/* Extra large devices (extra-large laptops and desktops, 1700px and up) */
-@media only screen and (min-width: 1700px) {
-  @keyframes enemymove {
-    from {left: 0px;}
-    to {left: 39px;}
-  }
-}
-
-/* .logo {
-  max-height: '80px';
-  width: 'auto',;
-  padding: '5px';
-} */

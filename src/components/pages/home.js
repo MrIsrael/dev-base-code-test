@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react"
+import React, { Fragment, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { GlobalContext } from '../../context/GithubUserState'
@@ -8,11 +8,12 @@ const Home = () => {
 
   return(
     <Fragment>
-      <h2>Top 5 GitHub users</h2>
-      <p>Tap the username to see more information</p>
+      <h2>Top 5 GitHub Users</h2>
+      <p className='extra-margin'>Tap the username to see more information</p>
       {topFive.map(user => <Link to='/user' key={topFive.indexOf(user)}>
                              <button className='button' key={topFive.indexOf(user)} onClick={() => clickedUser(user)}>{user}</button>
-                           </Link>)}
+                           </Link>
+                  )}
     </Fragment>
   )
 }

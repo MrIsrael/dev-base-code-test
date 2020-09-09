@@ -9,7 +9,12 @@ export default (state, action) => {
     case 'SET_ACTIVE_USER':
       return {
         ...state,
-        userInfo: { ...state.userInfo, ...{ activeUser: action.payload, userLoaded: false } }
+        userInfo: { ...state.userInfo, ...{ activeUser: action.payload } }
+      }
+    case 'UNLOAD_USER':
+      return {
+        ...state,
+        userInfo: { ...state.userInfo, ...{ userLoaded: false } }
       }
     default:
       return state

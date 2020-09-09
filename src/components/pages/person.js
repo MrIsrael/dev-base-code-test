@@ -1,5 +1,4 @@
-import React, { Fragment, useContext, useEffect } from "react"
-import { Link } from 'react-router-dom'
+import React, { Fragment, useContext, useEffect } from 'react'
 
 import { GlobalContext } from '../../context/GithubUserState'
 
@@ -13,13 +12,18 @@ const Person = () => {
 
   return(
     <Fragment>
-      {userInfo.userLoaded && <div>
-                                <p>Username: {userInfo.activeUser}</p>
-                                <img src={userInfo.avatarUrl} alt='avatar' />
-                                <p>Name: {userInfo.name}</p>
-                                <p>Location: {userInfo.location}</p>
+      {userInfo.userLoaded && <div className='relative soft-color'>
+                                {/* <p>Username: {userInfo.activeUser}</p> */}
+                                <img src={userInfo.avatarUrl} alt='avatar' className='avatar' />
+                                <div className='absolute'>
+                                  <p className='black-text'>{userInfo.name === null ? 'No name' : userInfo.name}</p>
+                                  <p>{userInfo.location === null ? 'No location' : userInfo.location}</p>
+                                </div>
                               </div>}
-      <Link to='/'>Back</Link>
+                              
+      <div className='soft-color'>
+        <hr />
+      </div>
     </Fragment>
   )
 }

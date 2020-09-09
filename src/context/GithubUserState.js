@@ -38,6 +38,12 @@ export const GlobalProvider = ({ children }) => {
     })
   }
 
+  function unloadUser() {
+    dispatch({
+      type: 'UNLOAD_USER'
+    })
+  }
+
   return (
     <GlobalContext.Provider 
       value={{
@@ -45,6 +51,7 @@ export const GlobalProvider = ({ children }) => {
         userInfo: state.userInfo,
         getUser,
         clickedUser,
+        unloadUser
       }}
     >
       { children }
